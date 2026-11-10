@@ -111,8 +111,6 @@ export const NAV_LINKS: NavItem[] = [
   { label: "Our Care", href: "#care" },
   { label: "Our Space", href: "#space" },
   { label: "Enrollment", href: "#enrollment" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Blog", href: "#blog" },
 ];
 
 export const CARE_PILLARS: CarePillar[] = [
