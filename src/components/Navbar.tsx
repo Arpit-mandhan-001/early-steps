@@ -93,7 +93,7 @@ export default function Navbar() {
           {/* Desktop Right CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Button
-              href="#contact"
+              href="/contact-us"
               variant="rose"
               size="sm"
               icon={<Heart className="w-4 h-4 fill-white/30" />}

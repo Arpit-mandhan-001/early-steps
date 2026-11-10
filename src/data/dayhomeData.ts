@@ -106,11 +106,11 @@ export const BUSINESS_INFO = {
 };
 
 export const NAV_LINKS: NavItem[] = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Our Care", href: "#care" },
-  { label: "Our Space", href: "#space" },
-  { label: "Enrollment", href: "#enrollment" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Our Care", href: "/care" },
+  { label: "Our Space", href: "/space" },
+  { label: "Enrollment", href: "/enrollment" },
 ];
 
 export const CARE_PILLARS: CarePillar[] = [
