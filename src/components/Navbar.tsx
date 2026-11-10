@@ -5,22 +5,10 @@ import Link from "next/link";
 import { Phone, MapPin, Menu, X, Sparkles, Heart } from "lucide-react";
 import { BUSINESS_INFO, NAV_LINKS } from "@/data/dayhomeData";
 import Button from "./ui/Button";
+import Image from "next/image";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300">
@@ -52,20 +40,23 @@ export default function Navbar() {
 
       {/* Main navigation bar */}
       <nav
-        className={`w-full transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-md py-3.5 "
-            : "bg-white/90 backdrop-blur-xs py-4 md:py-5"
-        }`}
+        className={`w-full transition-all duration-300 bg-white/90 backdrop-blur-xs py-3`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo Branding */}
           <Link
-            href="#home"
-            className="group flex items-center gap-3 transition-transform active:scale-98"
+            href="/"
+            className="group flex items-center gap-1 transition-transform active:scale-98"
           >
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#244730] text-white flex items-center justify-center font-nunito font-extrabold text-xl shadow-xs group-hover:bg-[#1A3423] transition-colors">
-              <span className="text-[#CF7883] mr-0.5">E</span>S
+            <div className=" rounded-2xl bg-[#244730] text-white flex items-center justify-center font-nunito font-extrabold text-xl shadow-xs group-hover:bg-[#1A3423] transition-colors">
+              <Image
+                src="/logo.png"
+                alt="EarlySteps Dayhome Logo"
+                width={300}
+                height={120}
+                className="h-14 w-14"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-nunito font-extrabold text-xl sm:text-2xl text-[#244730] tracking-tight leading-tight group-hover:text-[#1A3423] transition-colors">
@@ -130,7 +121,9 @@ export default function Navbar() {
         {/* Mobile Navigation Drawer */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            mobileMenuOpen ? "max-h-[500px] border-b border-[#F0E8E1] bg-white shadow-xl" : "max-h-0"
+            mobileMenuOpen
+              ? "max-h-[500px] border-b border-[#F0E8E1] bg-white shadow-xl"
+              : "max-h-0"
           }`}
         >
           <div className="container mx-auto px-4 py-6 flex flex-col gap-2">
@@ -169,4 +162,3 @@ export default function Navbar() {
     </header>
   );
 }
-

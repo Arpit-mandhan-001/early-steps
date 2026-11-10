@@ -12,7 +12,7 @@ import Card from "./ui/Card";
 import Badge from "./ui/Badge";
 
 export default function EnrollmentSection() {
-  const steps = [
+const steps = [
     {
       num: "01",
       title: "Reach Out to Indu",
@@ -57,7 +57,7 @@ export default function EnrollmentSection() {
           <div className="grid grid-cols-1 lg:grid-cols-10 items-stretch">
 
             {/* LEFT CONTENT */}
-            <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+            <div className="lg:col-span-5 px-6 sm:px-8 lg:px-10 flex flex-col justify-center">
 
               {/* Badges */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -66,7 +66,7 @@ export default function EnrollmentSection() {
                 </Badge>
 
                 <Badge variant="rose" size="md">
-                  Spaces Limited
+                Limited Spaces
                 </Badge>
               </div>
 
@@ -144,51 +144,7 @@ export default function EnrollmentSection() {
           </div>
         </div>
 
-        {/* 4 Step Process Heading */}
-        <div className="text-center mb-8">
-
-          <h4 className="font-nunito font-extrabold text-2xl text-[#244730]">
-            Simple 4-Step Enrollment Process
-          </h4>
-
-          <p className="text-sm text-[#1D2A20]/75 mt-1">
-            We make enrolling your child straightforward, transparent, and pressure-free.
-          </p>
-
-        </div>
-
-        {/* 4 Step Process Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-          {steps.map((st) => (
-            <Card
-              key={st.num}
-              variant="white"
-              className="p-6 relative flex flex-col justify-between border border-[#F0E8E1]"
-            >
-
-              <div>
-                <span className="font-nunito font-black text-4xl text-[#CF7883]/30 block mb-3">
-                  {st.num}
-                </span>
-
-                <h5 className="font-nunito font-extrabold text-lg text-[#244730] mb-2 leading-snug">
-                  {st.title}
-                </h5>
-
-                <p className="font-sans text-xs sm:text-sm text-[#1D2A20]/80 leading-relaxed">
-                  {st.desc}
-                </p>
-              </div>
-
-              <div className="mt-4 pt-3 border-t border-[#F0E8E1] text-[11px] font-bold text-[#244730] uppercase tracking-wider">
-                Step {st.num}
-              </div>
-
-            </Card>
-          ))}
-
-        </div>
+        
 
       </div>
     </section>

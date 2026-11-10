@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { InstagramIcon } from "./ui/Icons";
 import { BUSINESS_INFO, NAV_LINKS } from "@/data/dayhomeData";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -22,9 +23,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
           {/* Col 1: Branding & Philosophy */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <Link href="#home" className="flex items-center gap-3 mb-4 group">
-              <div className="w-11 h-11 rounded-2xl bg-[#244730] border border-white/20 text-white flex items-center justify-center font-nunito font-extrabold text-xl shadow-xs group-hover:bg-[#CF7883] transition-colors">
-                <span className="text-[#CF7883] group-hover:text-white mr-0.5">E</span>S
+            <Link href="/" className="flex items-center gap-3 mb-4 group">
+              <div className=" rounded-2xl bg-[#244730] border border-white/20 text-white flex items-center justify-center font-nunito font-extrabold text-xl shadow-xs group-hover:bg-[#CF7883] transition-colors">
+                <Image
+                  src="/logo.png"
+                  alt="EarlySteps Dayhome Logo"
+                  width={300}
+                  height={120}
+                  className="h-20 w-20"
+                  priority
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-nunito font-extrabold text-2xl text-white tracking-tight leading-tight">
@@ -43,8 +51,6 @@ export default function Footer() {
             <p className="font-sans text-sm text-white/80 leading-relaxed max-w-md mb-6">
               {BUSINESS_INFO.mainMessage}
             </p>
-
-           
           </div>
 
           {/* Col 2: Navigation Links */}
@@ -89,7 +95,9 @@ export default function Footer() {
                   className="flex items-center gap-2.5 hover:text-[#EAA8B0] transition-colors"
                 >
                   <Mail className="w-4 h-4 text-[#CF7883] shrink-0" />
-                  <span className="truncate">{BUSINESS_INFO.contact.email}</span>
+                  <span className="truncate">
+                    {BUSINESS_INFO.contact.email}
+                  </span>
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
@@ -111,7 +119,8 @@ export default function Footer() {
 
             <div className="mt-6 pt-4 border-t border-white/10">
               <p className="text-xs text-white/60">
-                Childcare age group: 1–5 years. Welcoming enrollment in Whitehorn, Calgary.
+                Childcare age group: 1–5 years. Welcoming enrollment in
+                Whitehorn, Calgary.
               </p>
             </div>
           </div>
@@ -119,9 +128,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 gap-4">
-          <p>
-            © 2026 EarlySteps Dayhome. All rights reserved.
-          </p>
+          <p>© 2026 EarlySteps Dayhome. All rights reserved.</p>
           <div className="flex items-center gap-1 text-white/70">
             <span>Providing caring home childcare with</span>
             <Heart className="w-3.5 h-3.5 text-[#CF7883] fill-[#CF7883]" />

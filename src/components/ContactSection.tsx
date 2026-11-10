@@ -30,14 +30,54 @@ export default function ContactSection() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Simulate inquiry submission with email fallback
-    setSubmitted(true);
+
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mgaagdvn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          parentName: formData.parentName,
+          childAge: formData.childAge,
+          phone: formData.phone,
+          email: formData.email,
+          preferredStartDate: formData.preferredStartDate,
+          message: formData.message,
+          _subject: "New Enrollment Enquiry - EarlySteps Dayhome",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit enquiry. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section id="contact" className="py-8 sm:py-10 md:py-12 lg:py-16 bg-white relative">
+    <section
+      id="contact"
+      className="py-8 sm:py-10 md:py-12 lg:py-16 bg-white relative"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badgeText="Connect With Us"
@@ -55,7 +95,9 @@ export default function ContactSection() {
                 Get in Touch
               </h3>
               <p className="font-sans text-sm sm:text-base text-[#1D2A20]/80 leading-relaxed mb-6">
-                Whether you are planning ahead for next month or need an immediate opening for your toddler or preschooler (ages 1–5), we are here to help.
+                Whether you are planning ahead for next month or need an
+                immediate opening for your toddler or preschooler (ages 1–5), we
+                are here to help.
               </p>
 
               {/* Direct Action Cards */}
@@ -150,7 +192,9 @@ export default function ContactSection() {
                     Thank You for Your Inquiry!
                   </h4>
                   <p className="font-sans text-sm sm:text-base text-[#1D2A20]/80 max-w-md mx-auto mb-6">
-                    We've has received your message regarding EarlySteps Dayhome. We will be in touch with you shortly to discuss availability, hours, and schedule your tour.
+                    We've received your message regarding EarlySteps
+                    Dayhome. We will be in touch with you shortly to discuss
+                    availability, hours, and schedule your tour.
                   </p>
                   <button
                     type="button"
@@ -193,7 +237,10 @@ export default function ContactSection() {
                           required
                           value={formData.parentName}
                           onChange={(e) =>
-                            setFormData({ ...formData, parentName: e.target.value })
+                            setFormData({
+                              ...formData,
+                              parentName: e.target.value,
+                            })
                           }
                           placeholder="Your full name"
                           className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#F0E8E1] text-sm text-[#1D2A20] focus:outline-hidden focus:border-[#244730] focus:ring-1 focus:ring-[#244730]"
@@ -290,18 +337,31 @@ export default function ContactSection() {
                     />
                   </div>
 
+                  {error && (
+                    <p
+                      className="text-sm text-red-600 text-center"
+                      role="alert"
+                    >
+                      {error}
+                    </p>
+                  )}
+
                   <Button
                     type="submit"
                     variant="rose"
                     size="md"
                     className="w-full justify-center"
                     icon={<Send className="w-4 h-4" />}
+                    disabled={isSubmitting}
                   >
-                    Submit Enrollment Enquiry
+                    {isSubmitting
+                      ? "Sending Enquiry..."
+                      : "Submit Enrollment Enquiry"}
                   </Button>
 
                   <p className="text-center text-[11px] text-[#1D2A20]/60 mt-2">
-                    We respect your privacy. Your details are strictly used to respond to your childcare enquiry.
+                    We respect your privacy. Your details are strictly used to
+                    respond to your childcare enquiry.
                   </p>
                 </form>
               )}

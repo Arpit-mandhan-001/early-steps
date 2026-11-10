@@ -19,6 +19,7 @@ interface ButtonProps {
   target?: string;
   rel?: string;
   ariaLabel?: string;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -35,6 +36,7 @@ export default function Button({
   target,
   rel,
   ariaLabel,
+  disabled = false,
 }: ButtonProps) {
   const sizeClasses = {
     sm: "px-4 py-2 text-xs sm:text-sm font-semibold rounded-full gap-1.5",

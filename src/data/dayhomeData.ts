@@ -108,7 +108,7 @@ export const BUSINESS_INFO = {
 export const NAV_LINKS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
-  { label: "Our Care", href: "/care" },
+  { label: "Our Care", href: "/our-care" },
   { label: "Our Space", href: "/space" },
   { label: "Enrollment", href: "/enrollment" },
 ];

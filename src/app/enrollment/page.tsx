@@ -1,3 +1,4 @@
+import EnrollmentBanner from '@/components/enrollment/EnrollmentBanner'
 import WhyChooseUs from '@/components/enrollment/WhyChooseUs'
 import EnrollmentSection from '@/components/EnrollmentSection'
 import Footer from '@/components/Footer'
@@ -8,6 +9,7 @@ const page = () => {
   return (
     <>
     <Navbar />
+    <EnrollmentBanner />
     <WhyChooseUs />
     <Footer />
     </>

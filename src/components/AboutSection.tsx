@@ -1,4 +1,3 @@
-
 import React from "react";
 import Image from "next/image";
 import {
@@ -17,12 +16,7 @@ import Card from "./ui/Card";
 export default function AboutSection() {
   const { founder } = BUSINESS_INFO;
 
-  const credentialIcons = [
-    GraduationCap,
-    ShieldCheck,
-    HeartHandshake,
-    Award,
-  ];
+  const credentialIcons = [GraduationCap, ShieldCheck, HeartHandshake, Award];
 
   return (
     <section
@@ -30,7 +24,6 @@ export default function AboutSection() {
       className="py-10 sm:py-14 lg:py-20 bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Section Heading */}
         <SectionHeading
           badgeText="Meet The Founder"
@@ -42,12 +35,9 @@ export default function AboutSection() {
 
         {/* Main About Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mt-12">
-
           {/* LEFT SIDE - LARGE IMAGE (60%) */}
           <div className="lg:col-span-7 relative">
-
             <div className="relative w-full h-[420px] sm:h-[550px] lg:h-[800px] rounded-[2rem] overflow-hidden shadow-xl bg-[#FDF9F6]">
-
               <Image
                 src={IMAGES.about.founder}
                 alt={`Indu Bala, Founder of EarlySteps Dayhome in Whitehorn Calgary`}
@@ -71,14 +61,11 @@ export default function AboutSection() {
               </div>
 
               {/* Bottom Image Content */}
-              <div className=" absolute bottom-0 left-0 right-0 p-6 sm:p-9">
-
-              </div>
+              <div className=" absolute bottom-0 left-0 right-0 p-6 sm:p-9"></div>
             </div>
 
             {/* Floating Experience Badge */}
             <div className="absolute -bottom-5 -right-2 sm:-right-5 bg-white rounded-2xl p-4 shadow-xl border border-[#F0E8E1] flex items-center gap-3">
-
               <div className="w-11 h-11 rounded-xl bg-[#244730]/10 flex items-center justify-center">
                 <Award className="w-6 h-6 text-[#244730]" />
               </div>
@@ -91,14 +78,11 @@ export default function AboutSection() {
                   Childcare Experience
                 </p>
               </div>
-
             </div>
-
           </div>
 
           {/* RIGHT SIDE - ONLY TEXT (40%) */}
           <div className="lg:col-span-5 flex flex-col justify-center text-left pt-6 lg:pt-0">
-
             {/* Small Label */}
             <div className="flex items-center gap-2 mb-5">
               <span className="w-8 h-[2px] bg-[#CF7883]" />
@@ -117,20 +101,15 @@ export default function AboutSection() {
 
             {/* Founder Bio */}
             <div className="mt-6 space-y-5 text-base sm:text-lg text-[#1D2A20]/80 font-sans leading-relaxed">
-
               <p className="first-letter:text-5xl first-letter:font-extrabold first-letter:text-[#244730] first-letter:font-nunito first-letter:float-left first-letter:mr-2">
                 {founder.bio[0]}
               </p>
 
-              <p>
-                {founder.bio[1]}
-              </p>
-
+              <p>{founder.bio[1]}</p>
             </div>
 
             {/* Personal Message */}
             <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-[#FDF9F6] border-l-4 border-[#CF7883]">
-
               <div className="flex items-start gap-3">
                 <HeartHandshake className="w-6 h-6 text-[#CF7883] shrink-0 mt-1" />
 
@@ -145,12 +124,10 @@ export default function AboutSection() {
                   </p>
                 </div>
               </div>
-
             </div>
 
             {/* Experience Details */}
             <div className="grid grid-cols-2 gap-3 mt-6">
-
               <div className="rounded-xl bg-white border border-[#F0E8E1] p-4">
                 <h4 className="font-nunito font-extrabold text-2xl text-[#244730]">
                   2017
@@ -168,18 +145,14 @@ export default function AboutSection() {
                   A Mother's Caring Touch
                 </p>
               </div>
-
             </div>
-
           </div>
         </div>
 
         {/* QUALIFICATIONS & SAFETY CREDENTIALS */}
         <div className="mt-6 sm:mt-14">
-
           {/* Heading */}
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-
             <div>
               <h3 className="font-nunito font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#244730]">
                 Qualifications & Safety Credentials
@@ -187,15 +160,13 @@ export default function AboutSection() {
             </div>
 
             <p className="text-sm text-[#1D2A20]/65 max-w-sm leading-relaxed">
-              Professional training and a commitment to providing safe,
-              reliable and quality childcare.
+              Professional training and a commitment to providing safe, reliable
+              and quality childcare.
             </p>
-
           </div>
 
           {/* Horizontal Credentials Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-
             {founder.certifications.map((item, idx) => {
               const Icon = credentialIcons[idx % credentialIcons.length];
 
@@ -205,10 +176,8 @@ export default function AboutSection() {
                   variant="pastel"
                   className="p-5 sm:p-6 border border-[#F0E8E1] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                 >
-
                   {/* Icon and Year */}
                   <div className="flex items-center justify-between mb-5">
-
                     <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm">
                       <Icon className="w-6 h-6 text-[#244730]" />
                     </div>
@@ -216,7 +185,6 @@ export default function AboutSection() {
                     <span className="text-xs font-extrabold text-[#CF7883] bg-white px-3 py-1.5 rounded-full">
                       {item.year}
                     </span>
-
                   </div>
 
                   {/* Credential Details */}
@@ -239,14 +207,11 @@ export default function AboutSection() {
                       Professional Credential
                     </span>
                   </div>
-
                 </Card>
               );
             })}
-
           </div>
         </div>
-
       </div>
     </section>
   );
