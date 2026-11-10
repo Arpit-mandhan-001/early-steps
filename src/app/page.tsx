@@ -28,8 +28,8 @@ export default function Home() {
         <OurCareSection />
         <OurSpaceSection />
         <EnrollmentSection />
-        <TestimonialsSection />
-        <BlogSection />
+        {/* <TestimonialsSection /> */}
+        {/* <BlogSection /> */}
         <ContactSection />
       </main>
 
