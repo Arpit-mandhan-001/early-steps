@@ -83,7 +83,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3 py-1.5 text-base font-semibold text-[#1D2A20] hover:text-[#244730] hover:bg-[#244730]/5 rounded-full transition-all duration-200"
+                className="relative px-3 py-1.5 text-base font-semibold text-[#1D2A20] hover:text-[#B65D69] rounded-full transition-all duration-300 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-[#CF7883] after:transition-all after:duration-300 after:-translate-x-1/2 hover:after:w-full"
               >
                 {link.label}
               </a>

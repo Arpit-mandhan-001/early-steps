@@ -24,7 +24,7 @@ export default function Home() {
       {/* Main Content Sections */}
       <main className="flex-1">
         <HeroSection />
-        {/* <AboutSection /> */}
+        <AboutSection />
         <OurCareSection />
         <OurSpaceSection />
         <EnrollmentSection />
