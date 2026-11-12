@@ -140,13 +140,13 @@ export default function Navbar() {
 
             <div className="pt-4 mt-2 border-t border-[#F0E8E1] flex flex-col gap-3">
               <Button
-                href="#enrollment"
+                href="/contact"
                 variant="rose"
                 size="md"
                 className="w-full justify-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Enquire About Enrollment
+                Contact Us
               </Button>
               <a
                 href={BUSINESS_INFO.contact.phoneTel}
