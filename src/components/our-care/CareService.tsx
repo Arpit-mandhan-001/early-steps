@@ -164,7 +164,7 @@ const SERVICES = [
   },
   {
     title: "Healthy meals",
-    text: "Healthy lunch and two snacks daily.",
+    text: "Healthy lunch and snacks daily.",
     icon: FiCoffee,
     image: "/images/food.avif",
     span: "lg:col-span-4",

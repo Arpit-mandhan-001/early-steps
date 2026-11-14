@@ -135,14 +135,14 @@ export const CARE_PILLARS: CarePillar[] = [
     tag: "Ages 1–5",
   },
   {
-    id: "meals-snacks",
-    title: "Healthy Lunch & Two Snacks Daily",
-    shortDesc: "Nutritious, freshly prepared meals that fuel active minds and growing bodies.",
-    fullDesc:
-      "Every full day includes a wholesome lunch and two nutritious snacks. We focus on clean, balanced ingredients and encourage healthy table manners and social sharing.",
-    iconName: "Apple",
-    tag: "Nutritious Daily",
-  },
+  id: "meals-snacks",
+  title: "Healthy Lunch & Nutritious Snacks",
+  shortDesc: "Nutritious, freshly prepared meals that fuel active minds and growing bodies.",
+  fullDesc:
+    "Every full day includes a wholesome lunch and a variety of nutritious snacks. We focus on clean, balanced ingredients and encourage healthy table manners and social sharing.",
+  iconName: "Apple",
+  tag: "Nutritious Daily",
+},
   {
     id: "bilingual-comm",
     title: "English & Hindi Communication",

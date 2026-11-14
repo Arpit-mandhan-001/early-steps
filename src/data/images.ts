@@ -24,13 +24,13 @@ export const IMAGES = {
 
   // Care Highlights
   care: {
-    homeCare: "/images/dayhome/dayhome-7.jpeg",
-    playLearning: "/images/dayhome/dayhome-8.jpeg",
-    mealsSnacks: "/images/dayhome/dayhome-9.jpeg",
-    bilingual: "/images/dayhome/dayhome-10.jpeg",
-    creativeArts: "/images/dayhome/dayhome-11.jpeg",
-    outdoorPlay: "/images/dayhome/dayhome-12.jpeg",
-    booksToys: "/images/dayhome/dayhome-13.jpeg",
+    homeCare: "/images/dayhome/dayhome-39.jpeg",
+    playLearning: "/images/dayhome/dayhome-12.jpeg",
+    mealsSnacks: "/images/food.avif",
+    bilingual: "/images/dayhome/dayhome-13.jpeg",
+    creativeArts: "/images/our_care-5.avif",
+    outdoorPlay: "/images/dayhome/dayhome-50.jpeg",
+    booksToys: "/images/dayhome/dayhome-49.jpeg",
   },
 
   // Space Gallery Showcase

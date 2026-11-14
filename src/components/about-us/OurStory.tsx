@@ -1,23 +1,25 @@
 
 import Image from "next/image";
 
+
 const content = [
   {
     title: "Our Mission",
     description:
-      "For those that rather the full immersion of the in store experience we welcome your company and look forward to meeting you face to face. Being located in the 47 street diamond district.",
+      "To provide a warm, safe, and nurturing home-away-from-home where every child feels loved, valued, and supported. We encourage learning through play, creativity, meaningful connections, and everyday discoveries while supporting each child's unique growth and development.",
   },
   {
     title: "Our Vision",
     description:
-      "For those that rather the full immersion of the in store experience we welcome your company and look forward to meeting you face to face. Being located in the 47 street diamond district.",
+      "To create a joyful and inclusive learning environment where little ones build confidence, develop lifelong skills, explore their curiosity, and grow into happy, independent learners. We strive to give every child a strong foundation for a bright future.",
   },
   {
     title: "Our Story",
     description:
-      "For those that rather the full immersion of the in store experience we welcome your company and look forward to meeting you face to face. Being located in the 47 street diamond district.",
+      "Founded by Indu Bala, a mother of three and a Level 3 Early Childhood Educator, EarlySteps Dayhome was created from a genuine passion for nurturing young minds. With years of childcare experience, we offer families a caring home environment filled with meaningful play, wholesome meals, bilingual communication, and opportunities to learn, explore, and grow.",
   },
 ];
+
 
 export default function OurStory() {
   return (

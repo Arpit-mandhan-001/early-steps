@@ -177,7 +177,7 @@ const SECOND_IMAGE = { src: "/images/dayhome/dayhome-17.jpeg", alt: "Creative ac
 const HIGHLIGHTS = [
   { icon: FiHome, label: "Home-based care" },
   { icon: FiSmile, label: "Play-based learning" },
-  { icon: FiCoffee, label: "Lunch and two snacks daily" },
+  { icon: FiCoffee, label: "Lunch and snacks daily" },
   { icon: FiMessageCircle, label: "English and Hindi" },
 ];
 
