@@ -1,5 +1,113 @@
+"use client";
 
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+
+/* ---------- local helpers (same as CareHero) ---------- */
+const EASE = "ease-[cubic-bezier(.22,1,.36,1)]";
+
+function useInView<T extends HTMLElement>(threshold = 0.2) {
+  const ref = useRef<T>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setInView(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setInView(true);
+          io.disconnect();
+        }
+      },
+      { threshold, rootMargin: "0px 0px -6% 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [threshold]);
+  return { ref, inView };
+}
+
+function useParallax<T extends HTMLElement>(strength = 24) {
+  const ref = useRef<T>(null);
+  useEffect(() => {
+    const el = ref.current;
+    const parent = el?.parentElement;
+    if (!el || !parent || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const r = parent.getBoundingClientRect();
+      const p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
+      el.style.transform = `translate3d(0, ${(-p * strength).toFixed(1)}px, 0)`;
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [strength]);
+  return ref;
+}
+
+/** Bento tile: clip-path reveal, inner scale-down, scroll parallax, hover zoom. */
+function Frame({
+  src,
+  alt,
+  className = "",
+  sizes,
+  parallax = 12,
+  delay = 0,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  sizes: string;
+  parallax?: number;
+  delay?: number;
+}) {
+  const { ref, inView } = useInView<HTMLDivElement>(0.1);
+  const par = useParallax<HTMLDivElement>(parallax);
+  return (
+    <div
+      ref={ref}
+      className={`group relative min-h-0 min-w-0 overflow-hidden rounded-xl bg-[#FBEFEF] transition-[clip-path,opacity] duration-[1300ms] ${EASE} ${className}`}
+      style={{
+        clipPath: inView ? "inset(0% 0% 0% 0% round 0.75rem)" : "inset(14% 10% 14% 10% round 0.75rem)",
+        opacity: inView ? 1 : 0,
+        transitionDelay: `${delay}ms`,
+      }}
+    >
+      {/* over-sized layer so the parallax shift never exposes an edge */}
+      <div ref={par} className="absolute -inset-[12%] will-change-transform">
+        <div
+          className="relative h-full w-full transition-transform duration-[1600ms] ease-out"
+          style={{ transform: inView ? "scale(1)" : "scale(1.2)" }}
+        >
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            unoptimized
+            sizes={sizes}
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- data ---------- */
 
 // Update image paths here
 const images = {
@@ -45,12 +153,23 @@ const tiles = [
   { src: images.image15, desktop: "md:col-start-11 md:col-span-2 md:row-start-5 md:row-span-2", mobile: "col-span-1 row-span-2" },
 ];
 
+// Each tile drifts at a slightly different speed → depth between neighbours
+const PARALLAX = [14, 9, 18, 11, 16];
+
+/* ---------- section ---------- */
 export default function BentoGrid() {
+  const blob = useParallax<HTMLDivElement>(50);
+
   return (
-    <section className="w-full">
+    <section className="relative w-full overflow-x-clip">
+      {/* soft rose glow that drifts with scroll (same as CareHero) */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div ref={blob} className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-[#CF7883]/20 blur-3xl" />
+      </div>
 
       <div
         className="
+          relative
           mx-auto
           grid
           w-full
@@ -72,37 +191,17 @@ export default function BentoGrid() {
         "
       >
         {tiles.map((tile, index) => (
-          <div
+          <Frame
             key={index}
-            className={`
-              relative
-              min-h-0
-              min-w-0
-              overflow-hidden
-              rounded-xl
-              group
-              ${tile.mobile}
-              ${tile.desktop}
-            `}
-          >
-            <Image
-              src={tile.src}
-              alt={`Interior design ${index + 1}`}
-              fill
-              unoptimized
-              sizes="(max-width: 767px) 50vw, 25vw"
-              className="
-                object-cover
-                transition-transform
-                duration-700
-                ease-out
-                group-hover:scale-105
-              "
-            />
-          </div>
+            src={tile.src}
+            alt={`Interior design ${index + 1}`}
+            sizes="(max-width: 767px) 50vw, 25vw"
+            className={`${tile.mobile} ${tile.desktop}`}
+            parallax={PARALLAX[index % PARALLAX.length]}
+            delay={(index % 6) * 100}
+          />
         ))}
       </div>
-
     </section>
   );
 }

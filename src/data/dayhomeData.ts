@@ -62,6 +62,8 @@ export const BUSINESS_INFO = {
     emailMailto: "mailto:EarlySteps786dayhome@gmail.com",
     instagramHandle: "@dayhomeearlysteps",
     instagramUrl: "https://instagram.com/dayhomeearlysteps",
+    facebookUrl: "https://www.facebook.com/share/p/19fyQpimRJ/",
+    tiktokUrl: "https://vt.tiktok.com/ZSpMWXKxN/",
   },
   founder: {
     name: "Indu Bala",

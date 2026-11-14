@@ -202,7 +202,7 @@ export default function CareHero() {
                   new things, and grow through play.
                 </p>
               </Reveal>
-              <Reveal delay={400} className="mt-6 flex flex-wrap gap-3">
+              <Reveal delay={400} className="mt-10 flex flex-wrap gap-3">
                 <a href="#services" className={`${BTN} bg-[#CF7883] text-white hover:shadow-[0_12px_28px_-10px_rgba(207,120,131,0.9)]`}>
                   <span
                     aria-hidden="true"

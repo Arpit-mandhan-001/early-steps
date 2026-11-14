@@ -14,6 +14,7 @@ import {
 import { InstagramIcon } from "./ui/Icons";
 import { BUSINESS_INFO, NAV_LINKS } from "@/data/dayhomeData";
 import Image from "next/image";
+import { FaFacebook, FaTiktok } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -51,6 +52,39 @@ export default function Footer() {
             <p className="font-sans text-sm text-white/80 leading-relaxed max-w-md mb-6">
               {BUSINESS_INFO.mainMessage}
             </p>
+
+            
+            <li className="flex gap-5">
+                <a
+                  href={BUSINESS_INFO.contact.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 hover:text-[#EAA8B0] transition-colors"
+                >
+                  <InstagramIcon className="w-7 h-7 text-[#CF7883] shrink-0" />
+                  {/* <span>{BUSINESS_INFO.contact.instagramHandle}</span> */}
+                </a>
+
+                <a
+                  href={BUSINESS_INFO.contact.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 hover:text-[#EAA8B0] transition-colors"
+                >
+                  <FaFacebook className="w-7 h-7 text-[#CF7883] shrink-0" />
+                  {/* <span>{BUSINESS_INFO.contact.facebookHandle}</span> */}
+                </a>
+
+                <a
+                  href={BUSINESS_INFO.contact.tiktokUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 hover:text-[#EAA8B0] transition-colors"
+                >
+                  <FaTiktok className="w-7 h-7 text-[#CF7883] shrink-0" />
+                  {/* <span>{BUSINESS_INFO.contact.tiktokHandle}</span> */}
+                </a>
+              </li>
           </div>
 
           {/* Col 2: Navigation Links */}
@@ -104,17 +138,7 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-[#CF7883] shrink-0" />
                 <span>{BUSINESS_INFO.location.fullAddress}</span>
               </li>
-              <li>
-                <a
-                  href={BUSINESS_INFO.contact.instagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 hover:text-[#EAA8B0] transition-colors"
-                >
-                  <InstagramIcon className="w-4 h-4 text-[#CF7883] shrink-0" />
-                  <span>{BUSINESS_INFO.contact.instagramHandle}</span>
-                </a>
-              </li>
+              
             </ul>
 
             <div className="mt-6 pt-4 border-t border-white/10">

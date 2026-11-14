@@ -38,19 +38,7 @@ export default function SectionHeading({
             {title.split(highlightedWord)[0]}
             <span className="text-[#CF7883] relative inline-block">
               {highlightedWord}
-              <svg
-                className="absolute -bottom-1.5 left-0 w-full h-2 text-[#CF7883]/30 -z-10"
-                viewBox="0 0 100 20"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 15 Q50 0 100 15"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                />
-              </svg>
+             
             </span>
             {title.split(highlightedWord)[1]}
           </>

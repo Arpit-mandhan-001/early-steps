@@ -44,7 +44,6 @@ export default function AboutHero() {
           <div className="relative w-full max-w-[650px] mx-auto">
             {/* Top Decorative Label */}
             <div className="flex items-center gap-3 mb-5">
-              <span className="w-10 h-[2px] bg-[#CF7883]" />
               <span className="text-sm font-semibold tracking-[0.2em] uppercase text-[#CF7883]">
                 Moments That Matter
               </span>
@@ -191,13 +190,7 @@ export default function AboutHero() {
                     {item.description}
                   </p>
 
-                  {/* Bottom Verified Label */}
-                  <div className="flex items-center gap-2 mt-5 pt-4 border-t border-[#E9DED5]">
-                    <CheckCircle2 className="w-4 h-4 text-[#244730]" />
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#244730]">
-                      Professional Credential
-                    </span>
-                  </div>
+                 
                 </Card>
               );
             })}

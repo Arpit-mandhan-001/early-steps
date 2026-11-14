@@ -40,25 +40,27 @@ export default function ContactSection() {
     setError("");
 
     try {
-      const response = await fetch("https://formspree.io/f/mgaagdvn", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
         body: JSON.stringify({
           parentName: formData.parentName,
+          email: formData.email,
           childAge: formData.childAge,
           phone: formData.phone,
-          email: formData.email,
           preferredStartDate: formData.preferredStartDate,
           message: formData.message,
-          _subject: "New Enrollment Enquiry - EarlySteps Dayhome",
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit enquiry. Please try again.");
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.message || "Failed to submit enquiry. Please try again.",
+        );
       }
 
       setSubmitted(true);
@@ -76,7 +78,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-8 sm:py-10 md:py-12 lg:py-16 bg-white relative"
+      className="py-8 sm:py-10 md:py-12 lg:py-16 bg-[#F5F6EF] relative"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -192,9 +194,9 @@ export default function ContactSection() {
                     Thank You for Your Inquiry!
                   </h4>
                   <p className="font-sans text-sm sm:text-base text-[#1D2A20]/80 max-w-md mx-auto mb-6">
-                    We've received your message regarding EarlySteps
-                    Dayhome. We will be in touch with you shortly to discuss
-                    availability, hours, and schedule your tour.
+                    We've received your message regarding EarlySteps Dayhome. We
+                    will be in touch with you shortly to discuss availability,
+                    hours, and schedule your tour.
                   </p>
                   <button
                     type="button"
