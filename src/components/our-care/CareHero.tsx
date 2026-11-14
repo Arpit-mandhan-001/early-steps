@@ -211,7 +211,7 @@ export default function CareHero() {
                   <span className="relative">See what we offer</span>
                   <FiArrowRight className="relative transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
-                <a href="/contact" className={`${BTN} border-2 border-[#244730] text-[#244730] hover:bg-[#244730] hover:text-white`}>
+                <a href="/contact-us" className={`${BTN} border-2 border-[#244730] text-[#244730] hover:bg-[#244730] hover:text-white`}>
                   Ask about enrollment
                 </a>
               </Reveal>

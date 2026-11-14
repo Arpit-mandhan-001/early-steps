@@ -30,7 +30,7 @@ export default function Home() {
         <EnrollmentSection />
         {/* <TestimonialsSection /> */}
         {/* <BlogSection /> */}
-        <ContactSection />
+        {/* <ContactSection /> */}
       </main>
 
       {/* Footer */}

@@ -202,7 +202,7 @@ export default function EnrollmentSection() {
     <section
     ref={sectionRef}
       id="enrollment"
-      className="py-8 sm:py-10 md:py-12 lg:py-16 bg-[#FDF9F6] relative overflow-hidden"
+      className="py-1 sm:py-2 md:py-3 lg:py-4 bg-[#F8F1EC] relative overflow-hidden"
     >
         <FlyingBalloon play={sectionInView} containerRef={sectionRef} />
       {/* soft rose glow that drifts with scroll */}
@@ -319,6 +319,8 @@ export default function EnrollmentSection() {
         </Reveal>
 
       </div>
+
+      
     </section>
   );
 }
