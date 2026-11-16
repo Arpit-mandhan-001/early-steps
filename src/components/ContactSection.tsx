@@ -98,7 +98,9 @@ export default function ContactSection() {
               </h3>
               <p className="font-sans text-sm sm:text-base text-[#1D2A20]/80 leading-relaxed mb-6">
                 Whether you are planning ahead for next month or need an
-                immediate opening for your toddler or preschooler (ages 1–5), we
+                immediate opening for your toddler or preschooler{" "}
+                <br className="hidden xl:block" />
+                 (ages 1–5), we
                 are here to help.
               </p>
 

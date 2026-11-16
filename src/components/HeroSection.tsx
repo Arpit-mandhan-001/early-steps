@@ -162,7 +162,7 @@ export default function HeroSection() {
               <PhoneCall className="w-4 h-4 mt-1 sm:mt-0 shrink-0 text-[#CF7883]" />
 
               <span>
-                Prefer to talk directly? Call Indu at{" "}
+                Prefer to talk directly? Call Us at{" "}
                 <br className="block sm:hidden" />
                 <a
                   href={BUSINESS_INFO.contact.phoneTel}

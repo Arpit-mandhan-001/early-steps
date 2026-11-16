@@ -286,7 +286,7 @@ export default function EnrollmentSection() {
                     style={{ transform: imgInView ? "scale(1)" : "scale(1.2)" }}
                   >
                     <Image
-                      src="/images/dayhome/dayhome-29.jpeg"
+                      src="/images/dayhome/dayhome-56.png"
                       alt="Warm and welcoming home childcare environment"
                       fill
                       priority
