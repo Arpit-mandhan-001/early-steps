@@ -50,9 +50,9 @@ export const BUSINESS_INFO = {
   location: {
     neighborhood: "Whitehorn",
     city: "Calgary",
-    province: "Alberta",
+    // province: "Alberta",
     country: "Canada",
-    fullAddress: "Whitehorn, Calgary, Alberta, Canada",
+    fullAddress: "115 Whitlock Close NECalgary, AB T1Y 4X2, Canada",
   },
   contact: {
     phone: "403-467-8895",

@@ -112,7 +112,7 @@ export default function ContactSection() {
                   className="flex items-center gap-4 p-4 rounded-2xl bg-[#FDF9F6] border border-[#F0E8E1] hover:border-[#244730] hover:shadow-xs transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#244730] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                    <Phone className="w-5 h-5 text-[#CF7883]" />
+                    <Phone />
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-[#1D2A20]/60 uppercase tracking-wider">
@@ -143,8 +143,8 @@ export default function ContactSection() {
                 </a>
 
                 {/* Location */}
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-[#FDF9F6] border border-[#F0E8E1]">
-                  <div className="w-12 h-12 rounded-xl bg-[#244730]/10 text-[#244730] flex items-center justify-center shrink-0">
+                <a href="https://maps.app.goo.gl/u7zpm3V9BpBnXpPDA" target="_blank" className="flex items-center gap-4 p-4 rounded-2xl bg-[#FDF9F6] border border-[#F0E8E1] hover:border-[#CF7883] hover:shadow-xs transition-all group">
+                  <div className="w-12 h-12 rounded-xl bg-[#244730] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -155,7 +155,7 @@ export default function ContactSection() {
                       {BUSINESS_INFO.location.fullAddress}
                     </div>
                   </div>
-                </div>
+                </a>
 
                 {/* Instagram */}
                 <a
