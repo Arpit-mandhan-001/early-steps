@@ -153,6 +153,16 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 gap-4">
           <p>© 2026 EarlySteps Dayhome. All rights reserved.</p>
+          <div>
+            Designed & Developed by{" "}
+            <Link
+              href="https://www.monkartlabs.com"
+              target="_blank"
+              className="hover:text-[#CF7883] transition-colors"
+            >
+              Monkart Labs.
+            </Link>
+          </div>
           <div className="flex items-center gap-1 text-white/70">
             <span>Providing caring home childcare with</span>
             <Heart className="w-3.5 h-3.5 text-[#FFFFFF] fill-[#FFFFFF]" />

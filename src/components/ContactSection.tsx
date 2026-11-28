@@ -55,6 +55,7 @@ export default function ContactSection() {
         }),
       });
 
+    //   console.log("this is form data", formData);
       const result = await response.json();
 
       if (!response.ok || !result.success) {
